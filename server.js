@@ -4,7 +4,10 @@ const app = express();
 
 const { MongoClient } = require("mongodb");
 
-const uri = "mongodb+srv://USERNAME:PASSWORD@CLUSTER_NAME.mongodb.net/DATABASE_NAME?retryWrites=true&w=majority";
+// const uri = "mongodb+srv://USERNAME:PASSWORD@CLUSTER_NAME.mongodb.net/DATABASE_NAME?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URI;
+
+console.log(uri);
 
 // use the express-static middleware
 app.use(express.static("public"));
